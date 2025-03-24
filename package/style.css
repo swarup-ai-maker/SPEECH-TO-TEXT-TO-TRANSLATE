@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* 🎥 YouTube Video Full-Screen Background */
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Disable interaction */
+}
+
+/* 🎵 MP3 Audio (Hidden but Plays) */
+#audio-player {
+    display: none;
+}
+
+/* 🏆 UI Styling */
+h1 {
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 📜 Speech & Translation Output Boxes */
+#output, #translated-output {
+    width: 80%;
+    height: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    overflow-y: auto;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    button {
+        font-size: 1rem;
+    }
+}
